@@ -1,0 +1,10 @@
+import fs from 'fs';
+import * as cheerio from 'cheerio';
+const html = fs.readFileSync('../src/.documentos/Jessy Academy – Academia Certificada.html', 'utf8');
+const $ = cheerio.load(html);
+$('script, style').remove();
+const text = $('body').text().replace(/\s+/g, '\n');
+const lines = text.split('\n').filter(l => l.trim().length > 3);
+const unique = [...new Set(lines)];
+fs.writeFileSync('text.txt', unique.join('\n'));
+console.log('Extracted ' + unique.length + ' lines.');

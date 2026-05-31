@@ -3,7 +3,7 @@ version: '3.8'
 services:
   jessy-academia:
     build: .
-    container_name: jessy-academia-landing
+    container_name: jessy-academia
     restart: always
     expose:
       - "80"

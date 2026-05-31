@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  jessy-academia-landing:
+    build: .
+    container_name: jessy-academia-landing
+    restart: always
+    expose:
+      - "80"
+    networks:
+      - proxy_network
+
+networks:
+  proxy_network:
+    external: true

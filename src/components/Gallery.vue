@@ -8,7 +8,7 @@ const galleryImages = [
 </script>
 
 <template>
-  <section id="galeria" class="py-24 relative overflow-hidden bg-brand-darker border-y border-brand-border/30">
+  <section id="galeria" class="py-12 lg:py-24 relative overflow-hidden bg-brand-darker border-y border-brand-border/30">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       
       <div v-reveal class="text-center max-w-3xl mx-auto mb-16">

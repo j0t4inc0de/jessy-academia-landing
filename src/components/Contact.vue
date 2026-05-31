@@ -1,5 +1,5 @@
 <template>
-  <section id="contacto" class="py-24 relative overflow-hidden">
+  <section id="contacto" class="py-12 lg:py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
       
       <div v-reveal class="text-center max-w-3xl mx-auto mb-16">

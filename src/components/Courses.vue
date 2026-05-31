@@ -89,7 +89,7 @@ const courses = [
       </div>
 
       <!-- Course Grid -->
-      <div v-stagger class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8 md:mb-12">
+      <div v-stagger class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <div 
           v-for="(course, index) in courses" 
           :key="index"
@@ -135,26 +135,6 @@ const courses = [
           </div>
         </div>
       </div>
-
-      <!-- Extra Courses Notice -->
-      <div v-reveal class="max-w-4xl mx-auto">
-        <div class="glass-card p-8 border-l-4 border-l-brand-primary">
-          <div class="flex flex-col md:flex-row gap-6 items-center">
-            <div class="w-16 h-16 shrink-0 rounded-full bg-gradient-to-br from-brand-primary to-brand-gold flex items-center justify-center text-white">
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
-            </div>
-            <div>
-              <h4 class="text-xl font-bold text-white mb-2">Cursos Extras Intensivos</h4>
-              <p class="text-brand-muted text-sm leading-relaxed">
-                Además realizamos cursos intensivos de un día como ser: Cortes nuevas tendencias, Lifting de pestañas, Manicure, Técnicas de Balayages y Alisado Permanente. Consultar disponibilidad de fechas de inicio con el Departamento de Admisión.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </section>
 </template>

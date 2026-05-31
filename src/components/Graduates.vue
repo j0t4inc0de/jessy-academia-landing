@@ -24,7 +24,7 @@ const graduatesInfo = [
 </script>
 
 <template>
-  <section id="egresados" class="py-24 relative overflow-hidden">
+  <section id="egresados" class="py-12 lg:py-24 relative overflow-hidden">
     <!-- Glow backgrounds -->
     <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-primary/5 to-transparent pointer-events-none"></div>
 

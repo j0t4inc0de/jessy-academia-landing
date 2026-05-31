@@ -30,7 +30,7 @@ const images = [
 </script>
 
 <template>
-  <section id="ambientes" class="py-24 relative overflow-hidden bg-brand-dark">
+  <section id="ambientes" class="py-12 lg:py-24 relative overflow-hidden bg-brand-dark">
     <!-- Decoraciones de fondo -->
     <div class="absolute left-0 top-0 w-full h-full bg-[radial-gradient(ellipse_at_top_left,rgba(207,51,175,0.05)_0%,transparent_70%)] pointer-events-none"></div>
 

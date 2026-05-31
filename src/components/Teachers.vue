@@ -8,7 +8,7 @@ const professionals = [
 </script>
 
 <template>
-  <section id="nosotros" class="py-24 relative overflow-hidden">
+  <section id="nosotros" class="py-12 lg:py-24 relative overflow-hidden">
     <!-- Decorative Background -->
     <div class="absolute inset-0 bg-gradient-to-tr from-brand-primary/10 to-brand-gold/10 blur-3xl transform -rotate-12 scale-110 pointer-events-none"></div>
 

@@ -1,5 +1,5 @@
 <template>
-  <section id="calendario" class="py-24 relative overflow-hidden">
+  <section id="calendario" class="py-12 lg:py-24 relative overflow-hidden">
     <!-- Background Decor -->
     <div class="absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/10 blur-[100px] rounded-full pointer-events-none"></div>
 

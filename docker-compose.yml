@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  jessy-academia-landing:
+  jessy-academia:
     build: .
     container_name: jessy-academia-landing
     restart: always

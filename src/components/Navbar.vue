@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, watch } from 'vue'
 
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
@@ -8,12 +8,29 @@ const handleScroll = () => {
   isScrolled.value = window.scrollY > 50
 }
 
+const handleResize = () => {
+  if (window.innerWidth >= 1024) {
+    isMobileMenuOpen.value = false
+  }
+}
+
+watch(isMobileMenuOpen, (isOpen) => {
+  if (isOpen) {
+    document.body.style.overflow = 'hidden'
+  } else {
+    document.body.style.overflow = ''
+  }
+})
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
+  window.addEventListener('resize', handleResize)
 })
 
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
+  window.removeEventListener('resize', handleResize)
+  document.body.style.overflow = ''
 })
 
 const menuItems = [
@@ -32,12 +49,12 @@ const menuItems = [
   <nav 
     class="fixed w-full z-50 transition-all duration-500"
     :class="[
-      isScrolled 
+      (isScrolled || isMobileMenuOpen)
         ? 'bg-brand-dark/95 backdrop-blur-md py-4 shadow-glass border-b border-brand-border' 
         : 'bg-transparent py-6'
     ]"
   >
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative z-50 max-w-7xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between">
         
         <!-- Logo -->
@@ -81,13 +98,22 @@ const menuItems = [
       </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <Transition
+    enter-active-class="transition-opacity duration-300 ease-out"
+    enter-from-class="opacity-0"
+    enter-to-class="opacity-100"
+    leave-active-class="transition-opacity duration-300 ease-in"
+    leave-from-class="opacity-100"
+    leave-to-class="opacity-0"
+  >
     <div 
-      class="lg:hidden fixed inset-0 z-40 bg-brand-dark/98 backdrop-blur-xl transition-transform duration-500 ease-in-out"
-      :class="isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'"
-      style="top: 80px;"
+      v-if="isMobileMenuOpen"
+      class="lg:hidden fixed inset-0 z-40 bg-brand-dark/98 backdrop-blur-xl overflow-y-auto"
     >
-      <div class="flex flex-col items-center justify-center h-full space-y-8 pb-20">
+      <div class="flex flex-col items-center justify-center min-h-full space-y-6 pt-28 pb-12">
         <a 
           v-for="item in menuItems" 
           :key="item.name"
@@ -99,5 +125,5 @@ const menuItems = [
         </a>
       </div>
     </div>
-  </nav>
+  </Transition>
 </template>

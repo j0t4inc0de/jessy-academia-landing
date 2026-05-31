@@ -15,7 +15,7 @@ app.directive('reveal', {
           observer.unobserve(el)
         }
       })
-    }, { threshold: 0.15 })
+    }, { threshold: 0.05 })
     observer.observe(el)
   }
 })
@@ -30,7 +30,7 @@ app.directive('reveal-left', {
           observer.unobserve(el)
         }
       })
-    }, { threshold: 0.15 })
+    }, { threshold: 0.05 })
     observer.observe(el)
   }
 })
@@ -45,7 +45,7 @@ app.directive('reveal-right', {
           observer.unobserve(el)
         }
       })
-    }, { threshold: 0.15 })
+    }, { threshold: 0.05 })
     observer.observe(el)
   }
 })
@@ -60,7 +60,7 @@ app.directive('stagger', {
           observer.unobserve(el)
         }
       })
-    }, { threshold: 0.15 })
+    }, { threshold: 0.05 })
     observer.observe(el)
   }
 })
